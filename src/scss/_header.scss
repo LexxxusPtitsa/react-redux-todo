@@ -25,6 +25,13 @@
             margin-right: 5px;
             font-size: 16px;
         }
+        >svg{
+            cursor: pointer;
+            transition: all .3s;
+            &:hover{
+                color: rgb(85, 110, 255);;
+            }
+        }
     }
 
     &__btn{

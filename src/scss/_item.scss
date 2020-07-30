@@ -16,6 +16,12 @@
         }
         >svg{
             padding: 3px;
+            cursor: pointer;
+            opacity: .5;
+            transition: all .3s;
+            &:hover{
+                opacity: 1;
+            }
         }
         &-inner{
             flex: 1;
@@ -43,6 +49,8 @@
             font-size: 12px;
             padding: 0 5px;
             margin: 3px 3px;
+            cursor: pointer;
+
         }
     }
 }
