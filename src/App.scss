@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+
+@import './scss/bp';
+@import './scss/reset';
+
+
+@import './scss/title.scss';
+@import './scss/header.scss';
+@import './scss/input.scss';
+@import './scss/list.scss';
+@import './scss/item.scss';
+
+
+.todo{
+  max-width: 350px;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 40px;
+  @include min-tablet{
+    max-width: 450px;
+  }
+  &__wrapper{
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    // padding: 10px;
+  }
+}

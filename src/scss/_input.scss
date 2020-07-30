@@ -1,0 +1,32 @@
+.todo {
+
+    &__input,
+    &__input-tags {
+        width        : 100%;
+        box-sizing   : border-box;
+        padding      : 10px 5px;
+        font-size    : 16px;
+        font-weight  : 600;
+        outline      : none;
+        border       : none;
+        border-radius: 5px;
+        background   : unset;
+    }
+
+    &__input-inner {
+        display    : flex;
+        align-items: center;
+        border-bottom: 1px solid rgb(237, 235, 255);
+
+    }
+
+    &__input-wrapper {
+        border-radius : 5px 5px 0 0;
+        display       : flex;
+        flex-direction: column;
+        // align-items: center;
+        padding       : 0 5px;
+        background    : rgb(255, 247, 247)000;
+        border-bottom: 2px solid rgb(237, 235, 255);
+    }
+}

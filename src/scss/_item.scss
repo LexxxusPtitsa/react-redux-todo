@@ -1,0 +1,48 @@
+.todo{
+    &__check{
+        cursor: pointer;
+        padding: 3px;
+        &+svg{
+            cursor: pointer;
+        }
+    }
+    &__item{
+        display: flex;
+        align-items: flex-start;
+        padding: 10px;
+        border-bottom: 1px solid rgb(237, 235, 255);
+        &:last-child{
+            border-bottom: unset;
+        }
+        >svg{
+            padding: 3px;
+        }
+        &-inner{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .text{
+            flex: 1; 
+            padding: 5px;
+            font-weight: 600;
+            font-size: 16px;
+            &.completed{
+                color: rgba(0, 0, 0, 0.26);
+                text-decoration: line-through;
+            }
+        }
+        .tags{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .tag{
+            border: 1px solid rgb(83, 83, 83);
+            color: rgb(83, 83, 83);
+            border-radius: 5px;
+            font-size: 12px;
+            padding: 0 5px;
+            margin: 3px 3px;
+        }
+    }
+}
