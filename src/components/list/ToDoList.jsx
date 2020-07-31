@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ToDoItem from '../item/ToDoItem';
 
 
-const ToDoList = ({ tasks, deleteTask, completeTask, editTasks, filteredTags, tagFilter, changeTagFilter }) => {
+const ToDoList = ({tasks, completeTask, editTasks, filteredTags, addFilter }) => {
     return (<ul className="todo__list">
         {
             tasks.map(({ id, text, isCompleted, tags }) => (
@@ -16,9 +16,8 @@ const ToDoList = ({ tasks, deleteTask, completeTask, editTasks, filteredTags, ta
                     tags={tags}
                     id={id}
                     editTasks={editTasks}
-                    deleteTask={deleteTask}
                     completeTask={completeTask}
-                    changeTagFilter={changeTagFilter}
+                    addFilter={addFilter}
                 />
             ))
         }
@@ -27,20 +26,16 @@ const ToDoList = ({ tasks, deleteTask, completeTask, editTasks, filteredTags, ta
 
 ToDoList.protoTypes = {
     tasks: PropTypes.array,
-    deleteTask: PropTypes.func,
     completeTask: PropTypes.func,
     editTasks: PropTypes.func,
     filteredTags: PropTypes.func,
-    changeTagFilter: PropTypes.func,
 }
 
 ToDoList.defaultProps = {
     tasks: [],
-    deleteTask: () => { },
     completeTask: () => { },
     editTasks: () => { },
     filteredTags: () => { },
-    changeTagFilter: () => { },
 }
 
 export default ToDoList;

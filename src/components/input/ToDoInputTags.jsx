@@ -8,8 +8,8 @@ const ToDoInputTags = ({ value, onChange, onKeyPress }) => {
         type="text" 
         className="todo__input-tags" 
         onChange={onChange}
-        placeholder="Add tags through a space"
-        value={value}
+        placeholder="Add tags separated by COMMAS!"
+        value={value.replace(/\s/g, '')}
         onKeyPress={onKeyPress}
         />
         </>
