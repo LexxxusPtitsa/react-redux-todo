@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import PropTypes from 'prop-types';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
@@ -11,10 +11,6 @@ import { deleteTask, completeTask } from "../../actions/actionCreator";
 
 const ToDoItem = ({ text, isCompleted, id, tags, editTasks, addFilter }) => {
     const dispatch = useDispatch();
-    const tagFilter = useSelector(state => state.tagFilter);
-    const tagsStore = useSelector(state => state.tags);
-
-    
 
     return (<li className="todo__item">
         <div onClick={() => dispatch(completeTask(id))} className="todo__check">

@@ -1,4 +1,4 @@
-import { ADD_TASK, DELETE_TASK, COMPLETE_TASK, CHANGE_FILTER, ADD_TAG_FILTER, DELETE_TAG_FILTER, EDIT_TASK, ADD_TAGS, DELETE_TAGS, DELETE_TAG } from '../constants';
+import { ADD_TASK, DELETE_TASK, COMPLETE_TASK, CHANGE_FILTER, ADD_TAG_FILTER, DELETE_TAG_FILTER, EDIT_TASK, ADD_TAGS, DELETE_TAG } from '../constants';
 
 export const addTask = (id, text, isCompleted, tags) => ({
     type: ADD_TASK,
@@ -34,10 +34,7 @@ export const addTags = (tags) => ({
     type: ADD_TAGS,
     tags: tags
 });
-// export const deleteTags = (tagId) => ({
-//     type: DELETE_TAGS,
-//     tagId
-// });
+
 export const deleteTag = (tagId) => ({
     type: DELETE_TAG,
     tagId

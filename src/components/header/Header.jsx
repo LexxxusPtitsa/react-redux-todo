@@ -33,14 +33,8 @@ export const Header = ({ amount, addFilter }) => {
         let tagg = tagFilter;
         tag.isActive = false;
         let newTags = tags;
-        newTags.map((value, key) => {
-            if (value.value === tag.value) {
-                value.isActive = false;
-            }
-        })
-        
+        newTags.map((value, key) => value.value === tag.value ? value.isActive = false : null);
         tagg = tagg.filter(tg => tg.value !== tag.value);
-        console.log(tagg, newTags);
         dispatch(clearTagFilter(tagg, newTags));
     }
 
@@ -68,7 +62,7 @@ export const Header = ({ amount, addFilter }) => {
                 <div className="todo__tags-filter">
                     {tags.map((tag, key) => (
                         <div className="todo__tag-item" key={key} style={{ border: "1px solid " + tag.color + "", color: tag.color, opacity: tag.isActive ? 1 : 0.6 }}>
-                            <span  onClick={() => tag.isActive ? null : addFilter(tag)}>{tag.value}</span>
+                            <span onClick={() => tag.isActive ? null : addFilter(tag)}>{tag.value}</span>
                             {tag.isActive ? <ClearIcon onClick={() => removeTag(tag)} fontSize="small" /> : ''}
                             <DeleteForeverIcon
                                 onClick={() => { dispatch(deleteTag(tag.id)); removeTag(tag); }}

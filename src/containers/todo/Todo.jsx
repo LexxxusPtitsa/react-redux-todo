@@ -93,12 +93,12 @@ function ToDo(props) {
 
         let arrTags = sortTags(tags).map((value, key) => {
             let color = tagsStore.filter(tag => tag.value === value)[0] ? tagsStore.filter(tag => tag.value === value)[0].color : random_rgba();
-                return {
-                    id: value,
-                    value: value,
-                    color: color,
-                    isActive: false
-                }
+            return {
+                id: value,
+                value: value,
+                color: color,
+                isActive: false
+            }
         });
 
         if (taskText.length > 3 && key === 'Enter') {
@@ -130,10 +130,10 @@ function ToDo(props) {
                             return true;
                         }
                     }
-                })
+                });
                 let indices = [];
                 let idx = tsk.indexOf(true);
-                while (idx != -1) {
+                while (idx !== -1) {
                     indices.push(idx);
                     idx = tsk.indexOf(true, idx + 1);
                 }
@@ -142,7 +142,6 @@ function ToDo(props) {
                 }
             }));
         } else {
-            console.log(tasks);
             return tasks;
         }
     }
@@ -159,13 +158,8 @@ function ToDo(props) {
         let tagg = tagFilter;
         tag.isActive = true;
         let newTags = tagsStore;
-        newTags.map((value, key) => {
-            if (value.value === tag.value) {
-                value.isActive = true;
-            }
-        })
+        newTags.map((value, key) => value.value === tag.value ? value.isActive = true : null);
         tagg.push(tag);
-        console.log(tagg, newTags);
         dispatch(addTagFilter(tagg, newTags));
     }
     const getTasksCounter = tasks => tasks.filter(task => !task.isCompleted).length;
